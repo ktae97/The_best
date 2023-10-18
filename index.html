@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>THE BEST 출금 계산기</title>
+        <script>
+        function cal(){
+                var v1 = Number(document.getElementById("v1").value);
+                var v2 = Number(document.getElementById("v2").value);
+                var v3 = Number(document.getElementById("v3").value);
+                var res;
+
+                res=(Math.ceil(v1/v2*v3-v3)*-1)
+                document.getElementById("res").value = res;
+            }
+
+            function reset(){
+                document.getElementById("v1").value = "";
+                document.getElementById("v2").value = "";
+                document.getElementById("v3").value = "";
+                document.getElementById("res").value = "";
+            }
+        </script>
+    </head>
+    <body style="font-size: 36px;">
+        메인 마진레벨(%): 
+        <input type="text" id="v1" style="font-size: 36px;"><br> 
+        클론 마진레벨(%): 
+        <input type="text" id="v2" style="font-size: 36px;"><br>
+        클론 평가금: 
+        <input type="text" id="v3" style="font-size: 36px;"><br>
+        <br>
+        <input type="button" value="계산하기" onclick="cal()" style="font-size: 36px;">
+        <input type="button" value="초기화" onclick="reset()" style="font-size: 36px;">
+        <br><br>
+        출금 가능 금액: 
+        <input type="text" id="res" style="font-size: 36px;"><br>
+        <p style="color:#FF0000;">※출금 시 Lot 수 조절 확인 후 출금 하십시오. </p>
+        마진레벨 계산 공식<br>
+        평가금 ÷ 마진 × 100(%)<br><br>
+        출금 가능 금액 계산 공식<br>
+        클론 평가금 - 메인 마진레벨 ÷ 클론 마진레벨 × 클론 평가금<br>
+    </body>
+</html>
